@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.audiolib.controllers;
+package com.audiolib.utils;
 
 import com.audiolib.model.entites.User;
 import com.fasterxml.jackson.core.JsonProcessingException;

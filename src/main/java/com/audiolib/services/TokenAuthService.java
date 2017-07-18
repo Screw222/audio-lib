@@ -6,7 +6,7 @@
 package com.audiolib.services;
 
 import com.audiolib.config.UserAuthentication;
-import com.audiolib.controllers.TokenHandler;
+import com.audiolib.utils.TokenHandler;
 import com.audiolib.model.entites.User;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
