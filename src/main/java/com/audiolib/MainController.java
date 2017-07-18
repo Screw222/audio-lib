@@ -27,10 +27,6 @@ import org.springframework.web.client.RestTemplate;
 @ComponentScan
 public class MainController {
 
-    private static Logger logger = LoggerFactory.getLogger(MainController.class);
-
-    public static final String REST_SERVICE_URI = "http://localhost:8080/";
-
     @RequestMapping("/")
     String home() {
         return "index";
@@ -40,14 +36,4 @@ public class MainController {
         SpringApplication.run(MainController.class, args);
 
     }
-
-    /* POST */
-    private static void createAudio() {
-        System.out.println("Testing create User API----------");
-        RestTemplate restTemplate = new RestTemplate();
-        Audio audio = new Audio(4, "Lol", "Sarah", "sd", 134, "url");
-        URI uri = restTemplate.postForLocation(REST_SERVICE_URI + "audio", audio, Audio.class);
-        System.out.println("Location : " + uri.toASCIIString());
-    }
-
 }

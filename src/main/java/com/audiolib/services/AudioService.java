@@ -27,7 +27,6 @@ import org.springframework.web.util.UriComponentsBuilder;
  * @author Victor Novikov
  */
 @RestController
-@CrossOrigin
 @RequestMapping(value = "/api")
 public class AudioService {
 

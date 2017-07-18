@@ -26,7 +26,6 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Victor Novikov
  */
 @RestController
-@CrossOrigin
 public class LoginController {
 
     private Logger logger = LoggerFactory.getLogger(LoginController.class);
