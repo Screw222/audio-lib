@@ -5,17 +5,13 @@
  */
 package com.audiolib;
 
-import com.audiolib.model.entites.Audio;
-import java.net.URI;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.audiolib.utils.MyBatisUtils;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.client.RestTemplate;
 
 /**
  *
@@ -34,6 +30,6 @@ public class MainController {
 
     public static void main(String[] args) {
         SpringApplication.run(MainController.class, args);
-
+        MyBatisUtils.createDefaultTables();
     }
 }

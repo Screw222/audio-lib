@@ -21,6 +21,7 @@
     </environments> 
     <mappers>
         <mapper class="com.audiolib.model.mappers.AudioMapper"/>      
-        <mapper class="com.audiolib.model.mappers.UserMapper"/>   
+        <mapper class="com.audiolib.model.mappers.UserMapper"/>  
+        <mapper class="com.audiolib.model.mappers.TablesMapper"/> 
     </mappers> 
 </configuration>
