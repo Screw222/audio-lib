@@ -9,8 +9,6 @@ import com.audiolib.config.UserAuthentication;
 import com.audiolib.model.entites.User;
 import com.audiolib.services.TokenAuthService;
 import com.audiolib.services.UserService;
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import javax.servlet.FilterChain;

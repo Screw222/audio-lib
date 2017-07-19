@@ -12,6 +12,8 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Util class for MyBatis
@@ -20,6 +22,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
  */
 public class MyBatisUtils {
 
+    public static final Logger logger = LoggerFactory.getLogger(MyBatisUtils.class);
     private static SqlSessionFactory sqlMapper;
     private static Reader reader;
 
@@ -53,7 +56,9 @@ public class MyBatisUtils {
         }
         try (SqlSession session = MyBatisUtils.getSession().openSession()) {
             TablesMapper mapper = session.getMapper(TablesMapper.class);
+            logger.info("Creating new table with name 'users' ...");
             mapper.createUsersTable();
+            logger.info("Inserting into table with name 'users' test values...");
             mapper.insertTestUsers();
             session.commit();
         }
@@ -66,7 +71,9 @@ public class MyBatisUtils {
         }
         try (SqlSession session = MyBatisUtils.getSession().openSession()) {
             TablesMapper mapper = session.getMapper(TablesMapper.class);
+            logger.info("Creating new table with name 'audio' ...");
             mapper.createAudioTable();
+            logger.info("Inserting into table with name 'audio' test values...");
             mapper.insertTestAudio();
             session.commit();
         }
@@ -74,8 +81,8 @@ public class MyBatisUtils {
 
     public static boolean isTableExist(String name) {
         try (SqlSession session = MyBatisUtils.getSession().openSession()) {
-            TablesMapper mapper = session.getMapper(TablesMapper.class
-            );
+            TablesMapper mapper = session.getMapper(TablesMapper.class);
+            logger.info("Check for existence table with name '{}' ...", name);
             boolean result = mapper.checkTableExists(name);
             return result;
         }
