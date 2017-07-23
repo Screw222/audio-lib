@@ -30,7 +30,7 @@ const AppContainer = React.createClass({
            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
            xhr.addEventListener('load', () => {
             if (xhr.status === 200) {
-                if(xhr.response!=null || xhr.response!=undefined){
+                if(xhr.response!=null){
                    var userResponse = JSON.parse(xhr.response.toString());
                     if(userResponse.username!=null || userResponse.username!=undefined){
                         this.setState({
@@ -41,7 +41,7 @@ const AppContainer = React.createClass({
                 }
             } else {
                  var resp = xhr.response;
-                    if(resp==null || resp==undefined || resp==""){
+                    if(resp==null || resp==""){
                         this.props.errorHandler("Failed to get current user.");
                 }else{  
                     var errorResponse = JSON.parse(xhr.response);

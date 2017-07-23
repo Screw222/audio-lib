@@ -10,10 +10,8 @@ var Page = React.createClass({
     defaultUrl:function(){
         var buildUrl = this.props.url;
         if(this.props.size == null
-           || this.props.size == undefined
            || parseInt(this.props.size) <= 0){
             if(this.props.searchParams == null 
-               || this.props.searchParams == undefined
                || this.props.searchParams == "")
             {
                 buildUrl=buildUrl + "page=";
@@ -26,7 +24,6 @@ var Page = React.createClass({
         else{
              buildUrl=buildUrl + "size="+this.props.size;
              if(this.props.searchParams != null 
-               && this.props.searchParams != undefined
                && this.props.searchParams != "")
             {
              buildUrl=buildUrl + "&" + this.props.searchParams;

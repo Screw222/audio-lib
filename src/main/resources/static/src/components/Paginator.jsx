@@ -71,29 +71,5 @@ var Paginator = React.createClass({
         );
     }
 });
-/*
-render:function(){
-        var rows = [], i=2;
-        for(;i<this.state.totalPages;i++){
-            if(i==this.state.currentPage){
-                rows.push(<li key={i} className="active" onClick={this.handleFirstPage}>{i}</li>);
-            }else{
-                rows.push(<li key={i} onClick={this.handleFirstPage}>{i}</li>);
-            }
-        }
-        return (
-            <div className="pagination">
-              <ul>
-                  <li key="first" onClick={this.handleFirstPage}><a>1</a></li>       
-                  <li key="last"
-                      onClick={this.handleLastPage} >
-                      {this.props.totalPages>0?this.props.totalPages:1}
-                  </li> 
-                  <li key="prev" onClick={this.handlePrevPage}><a>prev</a></li>
-                  <li key="next"  onClick={this.handleNextPage}><a>pnext</a></li>
-                </ul>
-            </div>
-        );
-    }*/
 
 export default Paginator;

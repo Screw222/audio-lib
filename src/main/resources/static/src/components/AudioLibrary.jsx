@@ -11,10 +11,8 @@ var AudioLibrary = React.createClass({
     defaultUrl:function(){
         var buildUrl = this.props.url;
         if(this.props.size == null
-           || this.props.size == undefined
            || parseInt(this.props.size) <= 0){
             if(this.state.searchParams == null 
-               || this.state.searchParams == undefined
                || this.state.searchParams == "")
             {
                 buildUrl=buildUrl + "page=";
@@ -27,7 +25,6 @@ var AudioLibrary = React.createClass({
         else{
              buildUrl=buildUrl + "size="+this.props.size;
              if(this.state.searchParams != null 
-               && this.state.searchParams != undefined
                && this.state.searchParams != "")
             {
              buildUrl=buildUrl + "&" + this.state.searchParams;

@@ -25,7 +25,7 @@ const Audio = React.createClass({
                 this.context.router.replace('/app');
             } else {
                 var resp = xhr.response;
-                if(resp==null || resp==undefined || resp==""){
+                if(resp==null || resp==""){
                    this.props.errorHandler("Failed to delete audio.");
                 }else{  
                     var errorResponse = JSON.parse(xhr.response);
